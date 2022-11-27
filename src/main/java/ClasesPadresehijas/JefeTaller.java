@@ -7,18 +7,19 @@ package ClasesPadresehijas;
 import java.util.ArrayList;
 
 public class JefeTaller extends Usuario {
-    private ArrayList<String> certificaciones; 
-    public JefeTaller(String username,String passsword,String lastnames,String names, String lnames,ArrayList<String> certificados){
+    private String[] certificaciones;
+    public JefeTaller(String username,String passsword,String names,String lnames,String certificados){
     super(username, passsword, names, lnames);
-    this.certificaciones=certificados;
+    
+    this.certificaciones=certificados.split(",");
     }
 
-    public ArrayList<String> getCertificaciones() {
+    public String[] getCertificaciones() {
         return certificaciones;
     }
 
-    public void setCertificaciones(ArrayList<String> certificaciones) {
-        this.certificaciones = certificaciones;
+    public void setCertificaciones(String certificaciones) {
+        this.certificaciones=certificaciones.split(",");
     }
     
 }

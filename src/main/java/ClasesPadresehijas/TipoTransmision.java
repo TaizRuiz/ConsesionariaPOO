@@ -8,15 +8,7 @@ package ClasesPadresehijas;
  *
  * @author USUARIO
  */
-public enum LlantasPesados {
-   
-   CUATRO("4"),
-   CINCO("5"),
-   SEIS("6"),
-   SIETE("7"),
-   OCHO("8");
-    private LlantasPesados(String abreviatura){
-        this.abreviatura=abreviatura;
-    }
-    private String abreviatura;
+public enum TipoTransmision {
+    HIDRAULICA,
+    MECANICA;
 }

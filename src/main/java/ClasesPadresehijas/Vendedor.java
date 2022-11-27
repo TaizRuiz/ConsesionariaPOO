@@ -5,19 +5,16 @@
 package ClasesPadresehijas;
 
 public class Vendedor extends Usuario {
-    private String idvendedor;
-    public Vendedor(String username,String passsword,String names,String lnames,String idvendedor){
+    private int idvendedor;
+    public Vendedor(String username,String passsword,String names,String lnames){
         super(username, passsword, names, lnames);
-        this.idvendedor=idvendedor;
+        this.idvendedor=idvendedor++;
     }
 
-    public String getIdvendedor() {
+    public int getIdvendedor() {
         return idvendedor;
     }
 
-    public void setIdvendedor(String idvendedor) {
-        this.idvendedor = idvendedor;
-    }
     
     
 }

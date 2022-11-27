@@ -19,6 +19,11 @@ public class Usuario {
         this.names = names;
         this.lnames = lnames;
     }
+    public Usuario(String username, String passsword) {
+        this.username = username;
+        this.passsword = passsword;
+        
+    }
 
     public String getUsername() {
         return username;

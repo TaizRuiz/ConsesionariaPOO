@@ -11,8 +11,8 @@ import TipoMotor.TipoMotor;
 public class Motocicleta extends Vehiculos {
     private final String numllantas="2";
     CategoriaMoto categoria;
-    public Motocicleta(String marca, String modelo, String anio, TipoMotor tipo, CategoriaMoto cate){
-        super(marca, modelo, anio, tipo);
+    public Motocicleta(String marca, String modelo, String anio,double precio, TipoMotor tipo, CategoriaMoto cate){
+        super(marca, modelo, anio, tipo, precio);
         this.categoria=cate;
      }
 

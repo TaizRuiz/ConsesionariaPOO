@@ -12,8 +12,8 @@ public class Automovil extends Vehiculos{
    private final String numllantas="4"; 
    private int numAsientos;
    private boolean camretro;
-   public Automovil(String marca, String modelo, String anio, TipoMotor tipo, int numAsientos,boolean camretro){
-        super(marca, modelo, anio, tipo);
+   public Automovil(String marca, String modelo, String anio, TipoMotor tipo, double precio, int numAsientos,boolean camretro){
+        super(marca, modelo, anio, tipo, precio);
         this.numAsientos=numAsientos;
         this.camretro=camretro;
         

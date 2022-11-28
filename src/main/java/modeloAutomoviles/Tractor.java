@@ -13,8 +13,8 @@ public class Tractor extends Vehiculos {
    private final String numllantas="4";
     private boolean usoAgricola;
     private TipoTransmision transmision;
-    public Tractor(String marca, String modelo, String anio, TipoMotor tipo, String numllantas,boolean esUsoAgricola, TipoTransmision transmision){
-        super(marca, modelo, anio, TipoMotor.DIESEL);
+    public Tractor(String marca, String modelo, String anio, double precio,TipoMotor tipo,boolean esUsoAgricola, TipoTransmision transmision){
+        super(marca, modelo, anio, TipoMotor.DIESEL, precio);
         this.usoAgricola=esUsoAgricola;
         this.transmision=transmision;
     }

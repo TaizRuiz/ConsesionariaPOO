@@ -10,12 +10,25 @@ public class Clientes extends Usuario{
     private String ncedula;
     private String ocupacion;
     private double income;
+    private int autosComprados;
     public Clientes(String username,String passsword,String names,String lnames,String cedula,String ocupacion,double income){
         super(username, passsword, names, lnames);
         this.ncedula=cedula;
         this.ocupacion=ocupacion;
         this.income=income;
+        this.autosComprados=0;
+        
     }
+
+    public int getAutosComprados() {
+        return autosComprados;
+    }
+
+    public void setAutosComprados(int autosComprados) {
+        this.autosComprados = autosComprados;
+    }
+    
+    
 
     public String getNcedula() {
         return ncedula;
@@ -41,4 +54,5 @@ public class Clientes extends Usuario{
         this.income = income;
     }
    
+    
 }

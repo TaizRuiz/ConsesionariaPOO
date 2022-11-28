@@ -9,19 +9,30 @@ import TipoMotor.TipoMotor;
 
 
 public abstract class Vehiculos {
-    
+    protected boolean solicitado;
     protected String marca;
     protected String modelo;
     protected String anio;
     protected TipoMotor tipo;
+    protected double precio;
 
-    public Vehiculos(String marca, String modelo, String anio, TipoMotor tipo) {
+    public Vehiculos(String marca, String modelo, String anio, TipoMotor tipo, double precio) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
         this.tipo = tipo;
+        this.precio=precio;
       
     }
+
+    public boolean isSolicitado() {
+        return solicitado;
+    }
+
+    public void setSolicitado(boolean solicitado) {
+        this.solicitado = solicitado;
+    }
+    
     
     public String getMarca() {
         return marca;
@@ -57,9 +68,9 @@ public abstract class Vehiculos {
 
     @Override
     public String toString() {
-        return  "marca=" + marca + ", modelo=" + modelo + ", anio=" + anio + ", tipo=" + tipo ;
+        return  "marca=" + marca + ", modelo=" + modelo + ", anio=" + anio  ;
     }
     public abstract String toStringDetallado();
-    
+    //Muestra si el vehiculo ha sido solicitado o no 
     
 }

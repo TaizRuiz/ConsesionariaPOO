@@ -3,21 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modeloUsuarios;
-
+import Solicitudes.*;
+import java.util.ArrayList;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 public class Usuario {
     protected String username;
     protected String passsword;
     protected String names;
     protected String lnames;
+    protected ArrayList<Solicitud> buzonMensajes; 
+  
 
     public Usuario(String username, String passsword, String names, String lnames) {
         this.username = username;
         this.passsword = passsword;
         this.names = names;
         this.lnames = lnames;
+        this.buzonMensajes=new ArrayList<>();
     }
     public Usuario(String username, String passsword) {
         this.username = username;
@@ -25,6 +28,10 @@ public class Usuario {
         
     }
 
+    public ArrayList<Solicitud> getBuzonMensajes() {
+        return buzonMensajes;
+    }
+    
     public String getUsername() {
         return username;
     }

@@ -11,15 +11,17 @@ import TipoMotor.TipoMotor;
 public class Camion extends Vehiculos {
     private int numllantas;
     private double capacidadCarga;
-    private int numejes= (this.numllantas/2);
-    public Camion(String marca, String modelo, String anio, TipoMotor tipo,double capacidadCarga, int numllantas){
-        super(marca, modelo, anio, tipo);
+    private int numejes;
+    public Camion(String marca, String modelo, String anio, TipoMotor tipo,double precio,double capacidadCarga, int numllantas){
+        super(marca, modelo, anio, tipo, precio);
         this.capacidadCarga=capacidadCarga;
         if ( numllantas>3 && 9> numllantas){
            this.numllantas=numllantas;
+           this.numejes=numllantas/2;
         }
         else{
             this.numllantas=4;
+            this.numejes=this.numllantas/2;
         }
     }
 

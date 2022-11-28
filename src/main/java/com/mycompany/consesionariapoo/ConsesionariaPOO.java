@@ -4,18 +4,25 @@
  */
 
 package com.mycompany.consesionariapoo;
-import ClasesPadresehijas.*;
+import modeloAutomoviles.*;
+import modeloUsuarios.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+
 public class ConsesionariaPOO {
-    private ArrayList<Usuario> lusuarios; 
+    private static ArrayList<Usuario> lusuarios; 
     private ArrayList<Vehiculos> vehiculosDisponibles;
-    private String bienvenida;
+    private static String bienvenida;
     
     
     public static void main(String[] args) {
+        
+        
         ConsesionariaPOO Sistema=new ConsesionariaPOO();
-        Sistema.InicializarSistema();
+        ConsesionariaPOO.InicializarSistema();
+       
+        
         int opcion,opcion2=0;
         String entradausuario,entradacontraseña;
         Scanner sc=new Scanner(System.in);
@@ -26,17 +33,17 @@ public class ConsesionariaPOO {
             opcion=sc.nextInt();
             switch(opcion){
                 case 1:
-                    boolean resultado;
+                  
                     //Hace log in
-                    do {
-                     System.out.println("Ingrese su nombre de usuario:");
+                    System.out.println("Ingrese su nombre de usuario:");
                     entradausuario=sc.next();
                     System.out.println("Ingrese su contraseña: ");
                     entradacontraseña=sc.next();
+                    do {
+                     boolean resultado;
+                     
                     Usuario usuarioIngreso=new Usuario(entradausuario, entradacontraseña);
                     resultado=Sistema.IniciarSesion(usuarioIngreso);
-                        System.out.println(usuarioIngreso.getUsername());
-                        System.out.println(usuarioIngreso.getPasssword());
                     if (resultado==true){
                             System.out.println("Bienvenid@, ha ingresado correctamente");
                             opcion2=2;
@@ -68,7 +75,7 @@ public class ConsesionariaPOO {
                                     System.out.println("Ingrese su contraseña: ");
                                     entradacontraseña=sc.next();
                                     usuarioIngreso=new Usuario(entradausuario, entradacontraseña);
-                                   resultado=Sistema.IniciarSesion(usuarioIngreso);
+                                    resultado=Sistema.IniciarSesion(usuarioIngreso);
                                    break;
                                case 2:
                                    opcion2=2;
@@ -99,11 +106,11 @@ public class ConsesionariaPOO {
         lusuarios=new ArrayList<>();
         vehiculosDisponibles=new ArrayList<>();
     }
-    public void InicializarSistema(){
+    public static void InicializarSistema(){
         //Mensaje de bienvenida
         System.out.println(bienvenida);
         //Ingreso de datos de los usuarios
-        lusuarios.add(new Clientes("Pedro123","Pedro123", "Pedro Luis","Sanchez Sanchez", "0914463815", "Ingeniero", 15000));
+        
         lusuarios.add(new JefeTaller("Pablo123","Pablo12", "Pablo Luis","Martinez Martinez"," Mecanico en Hidraulica,Certificado en mecanica preventiva"));
         lusuarios.add(new Supervisor ("Maria12","Mar1a", "Maria Luisa","Bernal Sanchez", "Licenciatura en administracion, Licenciatura en control de calidad"));
         lusuarios.add(new Clientes("AnaB123","Belem@15", "Ana Belen","Teran Rosales", "0911463815", "Licenciada en Educacion Parvularia", 1500));
@@ -125,12 +132,11 @@ public class ConsesionariaPOO {
     }
     public boolean IniciarSesion(Usuario usu){
      for (Usuario u:lusuarios){
+        
             if (u.equals(usu)==true) {
+                
                 return true; 
             }
-            else {
-                return false;
-            } 
         } 
      return false;
     }

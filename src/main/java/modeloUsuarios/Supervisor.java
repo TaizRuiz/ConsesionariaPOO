@@ -2,15 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ClasesPadresehijas;
-    
+package modeloUsuarios;
+
 import java.util.ArrayList;
 
-public class JefeTaller extends Usuario {
-    private String[] certificaciones;
-    public JefeTaller(String username,String passsword,String names,String lnames,String certificados){
+public class Supervisor extends Usuario {
+   private String[] certificaciones; 
+    public Supervisor(String username,String passsword,String names,String lnames,String certificados){
     super(username, passsword, names, lnames);
-    
     this.certificaciones=certificados.split(",");
     }
 
@@ -19,7 +18,7 @@ public class JefeTaller extends Usuario {
     }
 
     public void setCertificaciones(String certificaciones) {
-        this.certificaciones=certificaciones.split(",");
+        this.certificaciones = certificaciones.split(",");
     }
     
-}
+}   

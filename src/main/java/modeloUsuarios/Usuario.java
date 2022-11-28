@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ClasesPadresehijas;
+package modeloUsuarios;
 
 import java.util.Objects;
 import java.util.logging.Logger;
@@ -78,8 +78,9 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return  "names=" + names + ", lnames=" + lnames ;
+        return "Usuario{" + "username=" + username + ", passsword=" + passsword + ", names=" + names + ", lnames=" + lnames + '}';
     }
+
     
     
 

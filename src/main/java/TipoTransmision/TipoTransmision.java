@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
-package ClasesPadresehijas;
+package TipoTransmision;
 
 /**
  *
  * @author USUARIO
  */
-public enum CategoriaMoto {
-    DEPORTIVA,
-    SCOOTER,
-    TODO_TERRENO;
+public enum TipoTransmision {
+    HIDRAULICA,
+    MECANICA;
 }

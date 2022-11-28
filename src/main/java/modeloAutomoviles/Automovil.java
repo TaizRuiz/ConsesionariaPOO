@@ -2,7 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ClasesPadresehijas;
+package modeloAutomoviles;
+
+import modeloAutomoviles.Vehiculos;
+import TipoMotor.TipoMotor;
+import TipoMotor.TipoMotor;
 
 public class Automovil extends Vehiculos{
    private final String numllantas="4"; 

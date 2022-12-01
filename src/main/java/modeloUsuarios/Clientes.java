@@ -3,31 +3,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modeloUsuarios;
-
+import Solicitudes.*;
+import modeloAutomoviles.*;
 import modeloUsuarios.Usuario;
+import EstadosSolicitud.TipoSolicitud;
+import java.util.ArrayList;
 
 public class Clientes extends Usuario{
     private String ncedula;
     private String ocupacion;
     private double income;
-    private int autosComprados;
+    
+    private ArrayList<Integer> SolicitudesEnviadas;
+    private ArrayList<VehiculosTaller> VehiculosComprados;
     public Clientes(String username,String passsword,String names,String lnames,String cedula,String ocupacion,double income){
         super(username, passsword, names, lnames);
         this.ncedula=cedula;
         this.ocupacion=ocupacion;
         this.income=income;
-        this.autosComprados=0;
-        
+        this.VehiculosComprados=new ArrayList<>();
+        this.SolicitudesEnviadas=new ArrayList<>();
+       
     }
 
-    public int getAutosComprados() {
-        return autosComprados;
-    }
-
-    public void setAutosComprados(int autosComprados) {
-        this.autosComprados = autosComprados;
+    public ArrayList<Integer> getSolicitudesEnviadas() {
+        return SolicitudesEnviadas;
     }
     
+    public SolicitudVenta SolicitarCotizacion(Usuario emisor, Vehiculos v, TipoSolicitud tipo) { 
+        return new SolicitudVenta(emisor, v, tipo);
+    }
+
     
 
     public String getNcedula() {
@@ -52,6 +58,14 @@ public class Clientes extends Usuario{
 
     public void setIncome(double income) {
         this.income = income;
+    }
+
+    public ArrayList<VehiculosTaller> getVehiculosComprados() {
+        return VehiculosComprados;
+    }
+
+    public void setVehiculosComprados(ArrayList<VehiculosTaller> VehiculosComprados) {
+        this.VehiculosComprados = VehiculosComprados;
     }
    
     

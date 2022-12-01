@@ -13,6 +13,7 @@ public class Usuario {
     protected String names;
     protected String lnames;
     protected ArrayList<Solicitud> buzonMensajes; 
+    
   
 
     public Usuario(String username, String passsword, String names, String lnames) {

@@ -8,21 +8,21 @@ import modeloAutomoviles.*;
 import EstadosSolicitud.*;
 public class Solicitud {
     protected Usuario emisor;
-    protected Usuario receptor;
+    
     protected Vehiculos vehiculoSolicitud;
     protected TipoSolicitud motivo;
     protected EstadosSolicitud estado;
     
-    public Solicitud(Usuario emisor, Usuario Receptor, Vehiculos v){
+    public Solicitud(Usuario emisor, Vehiculos v, TipoSolicitud tipo){
         this.emisor=emisor;
-        this.receptor=receptor;
+        this.motivo=tipo;
         this.vehiculoSolicitud=v;
+        this.estado=EstadosSolicitud.EN_ESPERA;
+        
     }
-    public void Enviar(Usuario usuario){
-       
-        usuario.getBuzonMensajes().add(this);
-    }
-
+    
+  
+    
     public Usuario getEmisor() {
         return emisor;
     }
@@ -46,17 +46,24 @@ public class Solicitud {
     public void setMotivo(TipoSolicitud motivo) {
         this.motivo = motivo;
     }
-
-   
-
-    public Usuario getReceptor() {
-        return receptor;
+    
+    @Override
+    public String toString() {
+        return "vehiculo Solicitado =" + vehiculoSolicitud +"\n"+ " tipo de solicitud =" + motivo +"\n"+ "estado de salicitud =" + estado
+                +"\n"+ "nombre solicitante =" + this.emisor.getNames()+" "+this.emisor.getLnames();
     }
 
-    public void setReceptor(Usuario receptor) {
-        this.receptor = receptor;
+    @Override
+    public boolean equals(Object obj) {
+        if (this==obj){
+          return true;
+        }
+        if(obj!=null && obj instanceof Solicitud){
+          Solicitud s= (Solicitud) obj;
+          return (this.getEmisor().equals(s.getEmisor())&& (this.getVehiculoSolicitud().equals(s.getVehiculoSolicitud())));
+        }
+        return false;
     }
-
     public EstadosSolicitud getEstado() {
         return estado;
     }

@@ -10,5 +10,6 @@ package EstadosSolicitud;
  */
 public enum TipoSolicitud {
     COMPRA,
-    COTIZACION;
+    COTIZACION,
+    MECANICA;
 }

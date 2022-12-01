@@ -6,6 +6,7 @@ package modeloAutomoviles;
 
 import TipoMotor.TipoMotor;
 import TipoMotor.TipoMotor;
+import modeloUsuarios.Usuario;
 
 
 public abstract class Vehiculos {
@@ -14,7 +15,10 @@ public abstract class Vehiculos {
     protected String modelo;
     protected String anio;
     protected TipoMotor tipo;
+    
+    protected double Kilometraje;
     protected double precio;
+    
 
     public Vehiculos(String marca, String modelo, String anio, TipoMotor tipo, double precio) {
         this.marca = marca;
@@ -22,8 +26,29 @@ public abstract class Vehiculos {
         this.anio = anio;
         this.tipo = tipo;
         this.precio=precio;
+        this.Kilometraje=0.0;
+        
       
     }
+
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+      
+
+    public double getKilometraje() {
+        return Kilometraje;
+    }
+
+    public void setKilometraje(double Kilometraje) {
+        this.Kilometraje = Kilometraje;
+    }
+    
 
     public boolean isSolicitado() {
         return solicitado;
@@ -68,9 +93,20 @@ public abstract class Vehiculos {
 
     @Override
     public String toString() {
-        return  "marca=" + marca + ", modelo=" + modelo + ", anio=" + anio  ;
+        return  "marca=" + marca + ", modelo=" + modelo+" precio:"+this.precio + ", anio=" + anio  ;
     }
     public abstract String toStringDetallado();
     //Muestra si el vehiculo ha sido solicitado o no 
-    
+    @Override
+    public boolean equals(Object obj) {
+        if (this==obj){
+          return true;
+        }
+        if(obj!=null && obj instanceof Vehiculos){
+          Vehiculos nv= (Vehiculos) obj;
+          return (this.getModelo().equals(nv.getModelo())&& (this.getMarca().equals(nv.getMarca())));
+        }
+        return false;
+        
+    }
 }
